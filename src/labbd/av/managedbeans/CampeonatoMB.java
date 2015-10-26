@@ -5,13 +5,14 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
 import labbd.av.dao.implementation.CampeonatoDAOImpl;
 import labbd.av.dao.interfaces.CampeonatoDAO;
 import labbd.av.models.Campeonato;
 
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class CampeonatoMB {
 	private Campeonato campeonato;
 	private CampeonatoDAO campeonatoDAO;
