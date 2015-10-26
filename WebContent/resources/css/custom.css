@@ -7,9 +7,10 @@
 }
 .red {
     background: #ff0000;
-   
+    color: #000;   
 }
 .blue {
-    background: #0000FF;
+    background: #0080c0;
+      color: #000;
   
 }
