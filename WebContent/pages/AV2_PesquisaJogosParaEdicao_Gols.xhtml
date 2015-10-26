@@ -75,9 +75,9 @@
 					<h:panelGrid columns="2" cellpadding="10">
 						<h:outputLabel name="lblcodigoJogo" value="Jogo:" />
 						<h:outputText value="#{jogoMB2.jogo.codigoJogo}" />
-						<h:outputLabel name="lblgolsA" value="Gols Time A:" />
+						<h:outputText name="lblgolsA" value="#{jogoMB2.jogo.nomeTimeA}" />
 						<h:inputText value="#{jogoMB2.jogo.golsTimeA}" />
-						<h:outputLabel name="lblgolsB" value="Gols time B  :" />
+						<h:outputText name="lblgolsB" value="#{jogoMB2.jogo.nomeTimeB}" />
 						<h:inputText value="#{jogoMB2.jogo.golsTimeB}" />
 						<div>
 							<h:commandButton styleClass="btn  btn-danger" value="Salvar Gols"
