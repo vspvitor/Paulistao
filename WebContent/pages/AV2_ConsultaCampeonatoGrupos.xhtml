@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- BOOTSTRAP -->
+	<h:outputStylesheet library="css" name="bootstrap.min.css">
+	</h:outputStylesheet>
+	<h:outputStylesheet library="css" name="custom.css">
+	</h:outputStylesheet>
+	<h:outputScript library="js" name="bootstrap.min.js"></h:outputScript>
+	<!-- BOOTSTRAP -->
+	<title>Consulta Campeonato-Grupos</title>
+
+	<nav class="navbar navbar-inverse" >
+	<div class="container-fluid">
+		<div class="navbar-header">
+			
+			<a class="navbar-brand" href="#"> Avaliação 2 Laboratório de
+				Banco de Dados</a>
+		</div>
+
+
+	</div>
+	</nav>
+</h:head>
+<h:body>
+
+	<h:form>
+		<div class="panel panel-success text-center">
+			<div class="panel-heading ">Campeonato-Grupos</div>
+			<div class="panel-body">
+				
+
+				<div class="text-left">
+					<h:outputLabel>Classificação-Grupo A</h:outputLabel>
+				</div>
+				<div>
+					<p:dataTable value="#{campeonatoGruposMB.classificacaoTimesA}" var="classificacaoGrupoA" rowStyleClass="#{classificacaoGrupoA.estado eq 'REBAIXADO'  ? 'red' : null} #{classificacaoGrupoA.estado eq 'PERMANECE'  ? 'blue' : null}">
+						<p:column headerText="Time">
+								#{classificacaoGrupoA.nomeTime}
+						</p:column>
+						<p:column headerText="Jogos disputados">
+								#{classificacaoGrupoA.numeroJogosDisputados}
+						</p:column>
+						<p:column headerText="Vitórias">
+								#{classificacaoGrupoA.vitorias}
+						</p:column>
+						<p:column headerText="Empates">
+								#{classificacaoGrupoA.empates}
+						</p:column>
+						<p:column headerText="Derrotas">
+								#{classificacaoGrupoA.derrotas}
+						</p:column>
+						<p:column headerText="Gols Marcados">
+								#{classificacaoGrupoA.golsMarcados}
+						</p:column>
+						<p:column headerText="Gols Sofridos">
+								#{classificacaoGrupoA.golsSofridos}
+						</p:column>
+						<p:column headerText="Saldo de Gols">
+								#{classificacaoGrupoA.saldoGols}
+						</p:column>
+						<p:column headerText="Pontos">
+								#{classificacaoGrupoA.pontos}
+						</p:column>
+						<p:column headerText="Status">
+								#{classificacaoGrupoA.estado}
+						</p:column>
+						
+					
+						<p:chart type="line" model="#{chartView.lineModel1}"
+							style="height:300px;" />
+					</p:dataTable>
+					
+					
+					</div>
+					
+			</div>
+			
+			<div class="panel-body">
+				
+
+				<div class="text-left">
+					<h:outputLabel>Classificação-Grupo B</h:outputLabel>
+				</div>
+				<div>
+					<p:dataTable value="#{campeonatoGruposMB.classificacaoTimesB}" var="classificacaoGrupoB" rowStyleClass="#{classificacaoGrupoB.estado eq 'REBAIXADO'  ? 'red' : null} #{classificacaoGrupoB.estado eq 'PERMANECE'  ? 'blue' : null}">
+						<p:column headerText="Time">
+								#{classificacaoGrupoB.nomeTime}
+						</p:column>
+						<p:column headerText="Jogos disputados">
+								#{classificacaoGrupoB.numeroJogosDisputados}
+						</p:column>
+						<p:column headerText="Vitórias">
+								#{classificacaoGrupoB.vitorias}
+						</p:column>
+						<p:column headerText="Empates">
+								#{classificacaoGrupoB.empates}
+						</p:column>
+						<p:column headerText="Derrotas">
+								#{classificacaoGrupoB.derrotas}
+						</p:column>
+						<p:column headerText="Gols Marcados">
+								#{classificacaoGrupoB.golsMarcados}
+						</p:column>
+						<p:column headerText="Gols Sofridos">
+								#{classificacaoGrupoB.golsSofridos}
+						</p:column>
+						<p:column headerText="Saldo de Gols">
+								#{classificacaoGrupoB.saldoGols}
+						</p:column>
+						<p:column headerText="Pontos">
+								#{classificacaoGrupoB.pontos}
+						</p:column>
+						<p:column headerText="Status">
+								#{classificacaoGrupoB.estado}
+						</p:column>
+					
+						<p:chart type="line" model="#{chartView.lineModel1}"
+							style="height:300px;" />
+					</p:dataTable>
+					
+					
+					</div>
+					
+			</div>
+			
+			<div class="panel-body">
+				
+
+				<div class="text-left">
+					<h:outputLabel>Classificação-Grupo C</h:outputLabel>
+				</div>
+				<div>
+					<p:dataTable value="#{campeonatoGruposMB.classificacaoTimesC}" var="classificacaoGrupoC" rowStyleClass="#{classificacaoGrupoC.estado eq 'REBAIXADO'  ? 'red' : null} #{classificacaoGrupoC.estado eq 'PERMANECE'  ? 'blue' : null}">
+						<p:column headerText="Time">
+								#{classificacaoGrupoC.nomeTime}
+						</p:column>
+						<p:column headerText="Jogos disputados">
+								#{classificacaoGrupoC.numeroJogosDisputados}
+						</p:column>
+						<p:column headerText="Vitórias">
+								#{classificacaoGrupoC.vitorias}
+						</p:column>
+						<p:column headerText="Empates">
+								#{classificacaoGrupoC.empates}
+						</p:column>
+						<p:column headerText="Derrotas">
+								#{classificacaoGrupoC.derrotas}
+						</p:column>
+						<p:column headerText="Gols Marcados">
+								#{classificacaoGrupoC.golsMarcados}
+						</p:column>
+						<p:column headerText="Gols Sofridos">
+								#{classificacaoGrupoC.golsSofridos}
+						</p:column>
+						<p:column headerText="Saldo de Gols">
+								#{classificacaoGrupoC.saldoGols}
+						</p:column>
+						<p:column headerText="Pontos">
+								#{classificacaoGrupoC.pontos}
+						</p:column>
+						<p:column headerText="Status">
+								#{classificacaoGrupoC.estado}
+						</p:column>
+					
+						<p:chart type="line" model="#{chartView.lineModel1}"
+							style="height:300px;" />
+					</p:dataTable>
+					
+					
+					</div>
+					
+			</div>
+			
+			<div class="panel-body">
+				
+
+				<div class="text-left">
+					<h:outputLabel>Classificação-Grupo D</h:outputLabel>
+				</div>
+				<div>
+					<p:dataTable value="#{campeonatoGruposMB.classificacaoTimesD}" var="classificacaoGrupoD" rowStyleClass="#{classificacaoGrupoD.estado eq 'REBAIXADO'  ? 'red' : null} #{classificacaoGrupoD.estado eq 'PERMANECE'  ? 'blue' : null}">
+						<p:column headerText="Time">
+								#{classificacaoGrupoD.nomeTime}
+						</p:column>
+						<p:column headerText="Jogos disputados">
+								#{classificacaoGrupoD.numeroJogosDisputados}
+						</p:column>
+						<p:column headerText="Vitórias">
+								#{classificacaoGrupoD.vitorias}
+						</p:column>
+						<p:column headerText="Empates">
+								#{classificacaoGrupoD.empates}
+						</p:column>
+						<p:column headerText="Derrotas">
+								#{classificacaoGrupoD.derrotas}
+						</p:column>
+						<p:column headerText="Gols Marcados">
+								#{classificacaoGrupoD.golsMarcados}
+						</p:column>
+						<p:column headerText="Gols Sofridos">
+								#{classificacaoGrupoD.golsSofridos}
+						</p:column>
+						<p:column headerText="Saldo de Gols">
+								#{classificacaoGrupoD.saldoGols}
+						</p:column>
+						<p:column headerText="Pontos">
+								#{classificacaoGrupoD.pontos}
+						</p:column>
+						<p:column headerText="Status">
+								#{classificacaoGrupoD.estado}
+						</p:column>
+						
+					
+						<p:chart type="line" model="#{chartView.lineModel1}"
+							style="height:300px;" />
+					</p:dataTable>
+					
+					
+					</div>
+					
+			</div>
+				
+
+		</div>
+<div class="text-center"><a class="btn btn-lg btn-info" href="http://localhost:8080/Paulistao/faces/pages/AV2.xhtml">Voltar ao Menu</a>	
+						</div>
+	</h:form>
+
+
+
+</h:body>
+</html>

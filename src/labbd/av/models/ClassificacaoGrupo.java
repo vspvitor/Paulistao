@@ -11,6 +11,7 @@ public class ClassificacaoGrupo {
 	private int golsSofridos;
 	private int saldoGols;
 	private int pontos;
+	private String estado;
 	
 	public String getNomeTime() {
 		return nomeTime;
@@ -66,4 +67,11 @@ public class ClassificacaoGrupo {
 	public void setPontos(int pontos) {
 		this.pontos = pontos;
 	}
+	public String getEstado() {
+		return estado;
+	}
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+	
 }

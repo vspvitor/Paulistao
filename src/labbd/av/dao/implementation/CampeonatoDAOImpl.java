@@ -24,7 +24,7 @@ public class CampeonatoDAOImpl implements CampeonatoDAO {
 	public List<Campeonato> chamarTabelaCampeonato() throws SQLException {
 		List<Campeonato> lista = new ArrayList<Campeonato>();
 		
-		String sql = "SELECT * FROM dbo.fn_campeonato() ORDER BY pontos DESC, golsMarcados DESC, saldoGols DESC";
+		String sql = "SELECT * FROM fn_campeonato() ORDER BY pontos DESC, vitorias DESC, golsMarcados , saldoGols DESC";
 		PreparedStatement ps = connection.prepareStatement(sql);
 		ResultSet rs = ps.executeQuery();
 		while (rs.next()) {

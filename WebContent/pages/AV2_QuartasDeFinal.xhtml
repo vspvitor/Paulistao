@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- BOOTSTRAP -->
+	<h:outputStylesheet library="css" name="bootstrap.min.css">
+	</h:outputStylesheet>
+	<h:outputStylesheet library="css" name="custom.css">
+	</h:outputStylesheet>
+	<h:outputScript library="js" name="bootstrap.min.js"></h:outputScript>
+	<!-- BOOTSTRAP -->
+	<title>Consulta Campeonato-Grupos</title>
+
+	<nav class="navbar navbar-inverse" >
+	<div class="container-fluid">
+		<div class="navbar-header">
+			
+			<a class="navbar-brand" href="#"> Avaliação 2 Laboratório de
+				Banco de Dados</a>
+		</div>
+
+
+	</div>
+	</nav>
+</h:head>
+<h:body>
+
+	<h:form>
+		<div class="panel panel-success text-center">
+			<div class="panel-heading ">Campeonato-Quartas de final</div>
+				<div class="text-left">
+					<h:outputLabel>JOGO 1</h:outputLabel>
+				</div>
+				<div>
+					<p:dataTable value="#{quartasJogoMB.jogos1}" var="jogo1">
+						
+						<p:column headerText="TIME 1">
+								#{jogo1.nomeTimeA}
+						</p:column>
+						<p:column headerText="">
+							X						</p:column>
+						<p:column headerText="TIME 2">
+								#{jogo1.nomeTimeB}
+						</p:column>
+					
+						<p:chart type="line" model="#{chartView.lineModel1}"
+							style="height:300px;" />
+					</p:dataTable>
+					
+					
+					</div>
+				
+				<div class="text-left">
+					<h:outputLabel>JOGO 2</h:outputLabel>
+				</div>
+				<div>
+					<p:dataTable value="#{quartasJogoMB.jogos2}" var="jogo2">
+						
+						<p:column headerText="TIME 1">
+								#{jogo2.nomeTimeA}
+						</p:column>
+						<p:column headerText="">
+							X						</p:column>
+						<p:column headerText="TIME 2">
+								#{jogo2.nomeTimeB}
+						</p:column>
+					
+						<p:chart type="line" model="#{chartView.lineModel1}"
+							style="height:300px;" />
+					</p:dataTable>
+					
+					
+					</div>
+					
+					<div class="text-left">
+					<h:outputLabel>JOGO 3</h:outputLabel>
+				</div>
+				<div>
+					<p:dataTable value="#{quartasJogoMB.jogos3}" var="jogo3">
+						
+						<p:column headerText="TIME 1">
+								#{jogo3.nomeTimeA}
+						</p:column>
+						<p:column headerText="">
+							X						</p:column>
+						<p:column headerText="TIME 2">
+								#{jogo3.nomeTimeB}
+						</p:column>
+					
+						<p:chart type="line" model="#{chartView.lineModel1}"
+							style="height:300px;" />
+					</p:dataTable>
+					
+					
+					</div>
+					
+					<div class="text-left">
+					<h:outputLabel>JOGO 4</h:outputLabel>
+				</div>
+				<div>
+					<p:dataTable value="#{quartasJogoMB.jogos4}" var="jogo4">
+						
+						<p:column headerText="TIME 1">
+								#{jogo4.nomeTimeA}
+						</p:column>
+						<p:column headerText="">
+							X						</p:column>
+						<p:column headerText="TIME 2">
+								#{jogo4.nomeTimeB}
+						</p:column>
+					
+						<p:chart type="line" model="#{chartView.lineModel1}"
+							style="height:300px;" />
+					</p:dataTable>
+					
+					
+					</div>
+
+		</div>
+<div class="text-center"><a class="btn btn-lg btn-info" href="http://localhost:8080/Paulistao/faces/pages/AV2.xhtml">Voltar ao Menu</a>	
+						</div>
+	</h:form>
+
+
+
+</h:body>
+</html>

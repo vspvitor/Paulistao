@@ -18,7 +18,9 @@ public class GrupoMB {
 	private Grupo GrupoB;
 	private Grupo GrupoC;
 	private Grupo GrupoD;
+	
 	private GrupoDAO grupoDAO;
+	
 	private List<Grupo> timesA;
 	private List<Grupo> timesB;
 	private List<Grupo> timesC;

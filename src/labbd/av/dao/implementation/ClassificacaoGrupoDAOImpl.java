@@ -1,5 +1,6 @@
 package labbd.av.dao.implementation;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,11 +24,10 @@ public class ClassificacaoGrupoDAOImpl implements ClassificacaoGrupoDAO {
 	@Override
 	public List<ClassificacaoGrupo> pesquisarA() throws SQLException {
 		List<ClassificacaoGrupo> lista = new ArrayList<ClassificacaoGrupo>();
-		String sql = "SELECT * FROM fn_grupos(?)" + " ORDER BY pontos DESC," + " golsMarcados DESC,"
-				+ " saldoGols DESC";
-		PreparedStatement ps = connection.prepareStatement(sql);
-		ps.setInt(1, 1);
-		ResultSet rs = ps.executeQuery();
+		String sql = "{call sp_gruposFinal 1}";
+		CallableStatement cs = connection.prepareCall(sql);
+		
+		ResultSet rs = cs.executeQuery();
 		while (rs.next()) {
 			ClassificacaoGrupo classificacaoGrupo = new ClassificacaoGrupo();
 			classificacaoGrupo.setNomeTime(rs.getString("nomeTime"));
@@ -39,20 +39,21 @@ public class ClassificacaoGrupoDAOImpl implements ClassificacaoGrupoDAO {
 			classificacaoGrupo.setGolsSofridos(rs.getInt("golsSofridos"));
 			classificacaoGrupo.setSaldoGols(rs.getInt("saldoGols"));
 			classificacaoGrupo.setPontos(rs.getInt("pontos"));
-
+			classificacaoGrupo.setEstado(rs.getString("estado"));
 			lista.add(classificacaoGrupo);
 		}
+		rs.close();
+		cs.close();
 		return lista;
 	}
 
 	@Override
 	public List<ClassificacaoGrupo> pesquisarB() throws SQLException {
 		List<ClassificacaoGrupo> lista = new ArrayList<ClassificacaoGrupo>();
-		String sql = "SELECT * FROM fn_grupos(?)" + " ORDER BY pontos DESC," + " golsMarcados DESC,"
-				+ " saldoGols DESC";
-		PreparedStatement ps = connection.prepareStatement(sql);
-		ps.setInt(1, 2);
-		ResultSet rs = ps.executeQuery();
+		String sql = "{call sp_gruposFinal 2}";
+		CallableStatement cs = connection.prepareCall(sql);
+		
+		ResultSet rs = cs.executeQuery();
 		while (rs.next()) {
 			ClassificacaoGrupo classificacaoGrupo = new ClassificacaoGrupo();
 			classificacaoGrupo.setNomeTime(rs.getString("nomeTime"));
@@ -64,20 +65,22 @@ public class ClassificacaoGrupoDAOImpl implements ClassificacaoGrupoDAO {
 			classificacaoGrupo.setGolsSofridos(rs.getInt("golsSofridos"));
 			classificacaoGrupo.setSaldoGols(rs.getInt("saldoGols"));
 			classificacaoGrupo.setPontos(rs.getInt("pontos"));
+			classificacaoGrupo.setEstado(rs.getString("estado"));
 
 			lista.add(classificacaoGrupo);
 		}
+		rs.close();
+		cs.close();
 		return lista;
 	}
 
 	@Override
 	public List<ClassificacaoGrupo> pesquisarC() throws SQLException {
 		List<ClassificacaoGrupo> lista = new ArrayList<ClassificacaoGrupo>();
-		String sql = "SELECT * FROM fn_grupos(?)" + " ORDER BY pontos DESC," + " golsMarcados DESC,"
-				+ " saldoGols DESC";
-		PreparedStatement ps = connection.prepareStatement(sql);
-		ps.setInt(1, 3);
-		ResultSet rs = ps.executeQuery();
+		String sql = "{call sp_gruposFinal 3}";
+		CallableStatement cs = connection.prepareCall(sql);
+		
+		ResultSet rs = cs.executeQuery();
 		while (rs.next()) {
 			ClassificacaoGrupo classificacaoGrupo = new ClassificacaoGrupo();
 			classificacaoGrupo.setNomeTime(rs.getString("nomeTime"));
@@ -89,23 +92,22 @@ public class ClassificacaoGrupoDAOImpl implements ClassificacaoGrupoDAO {
 			classificacaoGrupo.setGolsSofridos(rs.getInt("golsSofridos"));
 			classificacaoGrupo.setSaldoGols(rs.getInt("saldoGols"));
 			classificacaoGrupo.setPontos(rs.getInt("pontos"));
+			classificacaoGrupo.setEstado(rs.getString("estado"));
 
 			lista.add(classificacaoGrupo);
 		}
-		return lista;
-	}
+		rs.close();
+		cs.close();
+		return lista;	}
 
 	@Override
 	public List<ClassificacaoGrupo> pesquisarD() throws SQLException {
 		List<ClassificacaoGrupo> lista = new ArrayList<ClassificacaoGrupo>();
-		String sql = "SELECT * FROM fn_grupos(?)"
-				+ " ORDER BY pontos DESC,"
-				+ " golsMarcados DESC,"
-				+ " saldoGols DESC";
-		PreparedStatement ps = connection.prepareStatement(sql);
-		ps.setInt(1, 4);
-		ResultSet rs = ps.executeQuery();
-		while(rs.next()){
+		String sql = "{call sp_gruposFinal 4}";
+		CallableStatement cs = connection.prepareCall(sql);
+		
+		ResultSet rs = cs.executeQuery();
+		while (rs.next()) {
 			ClassificacaoGrupo classificacaoGrupo = new ClassificacaoGrupo();
 			classificacaoGrupo.setNomeTime(rs.getString("nomeTime"));
 			classificacaoGrupo.setNumeroJogosDisputados(rs.getInt("numeroJogosDisputados"));
@@ -116,9 +118,12 @@ public class ClassificacaoGrupoDAOImpl implements ClassificacaoGrupoDAO {
 			classificacaoGrupo.setGolsSofridos(rs.getInt("golsSofridos"));
 			classificacaoGrupo.setSaldoGols(rs.getInt("saldoGols"));
 			classificacaoGrupo.setPontos(rs.getInt("pontos"));
-			
+			classificacaoGrupo.setEstado(rs.getString("estado"));
+
 			lista.add(classificacaoGrupo);
 		}
+		rs.close();
+		cs.close();
 		return lista;
 		}
 }
