@@ -5,13 +5,14 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
 import labbd.av.dao.implementation.JogoDAOImpl;
 import labbd.av.dao.interfaces.JogoDAO;
 import labbd.av.models.Jogo;
 
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class QuartasJogoMB {
 	private Jogo jogo1;
 	private Jogo jogo2;
